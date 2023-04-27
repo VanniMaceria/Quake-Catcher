@@ -1,0 +1,79 @@
+#map{
+   width: 50%;
+   height: 93vh;
+   margin-top: 50px;
+   position: fixed;
+}
+
+#container{
+   float: right;
+   width: 50%;
+}
+
+#div2{
+   margin-top: 56px;
+   width: auto;
+   height: 100vh;
+   background-color: white;
+}
+
+#spanQuake{
+   color: rgb(237, 185, 29);
+   font-weight: bold;
+}
+
+.bg-dark text-center text-white{
+   float: right;
+   width: 50%;
+   position: fixed;
+   bottom: 0;
+}
+
+#offcanvasDarkNavbarLabel{
+   color: rgb(237, 185, 29);
+}
+
+.nav-link:hover{
+   color: rgb(237, 185, 29);
+   transition: ease-in-out 0.2s;
+}
+
+.dropdown-item{
+   word-wrap: break-word;
+   white-space: pre-wrap;
+   word-break: break-word;
+}
+
+.dropdown-item:hover{
+   background-color: unset;
+   color: unset;
+}
+
+select{
+   width: 70px;
+   height: 35px;
+   margin-top: 10px;
+}
+
+/*reponsive*/
+@media screen and (max-width: 1000px) {
+   #map{
+     position: relative;
+     width: 100%;
+     height: 50vh;
+   }
+
+   #container{
+      float: unset;
+      width: 100%;
+   }
+
+   .bg-dark text-center text-white{
+      width: 100%;
+   }
+
+   #div2{
+      margin-top: auto;
+   }
+
+ }
