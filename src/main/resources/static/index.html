@@ -9,6 +9,7 @@
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/scrollbar.css"/>
     <title>Quake Catcher</title>
 </head>
@@ -27,10 +28,10 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="/html/index.html">Home</a>
+                  <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">File</a>
+                  <a class="nav-link" href="/html/file.html">Dataset</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,7 +42,7 @@
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li class="boxDropdown"><a class="dropdown-item" href="#">Dai un'occhiata a bla bla bla</a></li>
+                    <li class="boxDropdown"><a class="dropdown-item" class="link" href="https://github.com/VanniMaceria/Quake-Catcher" target="_blank">Dai un'occhiata alla repository su Github</a></li>
                   </ul>
                 </li>
               </ul>
@@ -52,36 +53,65 @@
                 
     
 
-
     <div id="map"></div> <!--mappa leaflet-->
 
     <div id="container">    <!-- questo è il 'body' di destra -->
+
         <div id="div2">
 
-          <form>
-            <label>Cerca per magnitudo:</label>
-            <select id="selectMagnitudo">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <button type="button" onclick="filtraPerMagnitudo()">Cerca</button>
-          </form>
+            <div class="card" id="card1">
+                <div class="card-header">
+                    Operazione #1
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Ricerca per magnitudo</h5>
+                    <p class="card-text">Esegue la ricerca dei terremoti con magnitudo maggiore o uguale di quelli avvenuti tra il 1990 e il 2014</p>
+                    <form>
+                        <label>Seleziona magnitudo:</label>
+                        <select id="selectMagnitudo">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <button class="pulsante" type="button" onclick="filtraPerMagnitudo()">Esegui</button>
+                    </form>
+                </div>
+            </div>
 
-          <form>
-            <label for="rangeInput">Cerca per anno:</label>
-            <input type="range" id="rangeInput" name="rangeInput" min="1990" max="2014" step="1" onchange="updateTextInput(this.value);">
-            <input type="text" id="textInput" name="textInput">
-            <button type="button" onclick="filtraPerAnno()">Cerca</button>
-          </form>
+            <div class="card">
+                <div class="card-header">
+                    Operazione #2
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Ricerca per anno</h5>
+                    <p class="card-text">Esegue una ricerca sui terremoti avvenuti nell'anno selezionato</p>
+                    <form>
+                        <label for="rangeInput">Seleziona anno:</label>
+                        <input type="range" id="rangeInput" name="rangeInput" min="1990" max="2014" step="1" onchange="updateTextInput(this.value);">
+                        <input type="text" id="textInput" name="textInput">
+                        <button class="pulsante" type="button" onclick="filtraPerAnno()">Esegui</button>
+                    </form>
+                </div>
+            </div>
 
-          <button type="button" onclick="vediRaster()">Vedi il raster</button>
+
+            <div class="card">
+                <div class="card-header">
+                    Operazione #3
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Vedi la mappa di concentrazione</h5>
+                    <p class="card-text">Carica il file raster della concentrazione di tutti i terremoti avvenuti tra il 1990 e il 2014.</p>
+                    <!-- Metti una leggenda dei colori qui-->
+                    <button class="pulsante" type="button" onclick="vediRaster()">Esegui</button>
+                </div>
+            </div>
 
         </div>  <!--div2 -->
 
@@ -94,22 +124,21 @@
               <section class="">
                   <!--Grid row-->
                   <div class="row d-flex justify-content-center">
-                    <!--Grid column-->
-                    <div class="col-auto">
-                      <p>Roba da mettere nel footer</p>
-                    </div>
-                    <!--Grid column-->
+                      <!--Grid column-->
+                      <div class="col-auto">
+                          <p>Tecnologie usate per lo sviluppo<br>- HTML<br>- CSS<br>- Javascript<br> - <a class="link" href="https://leafletjs.com/" target="_blank">Leaflet</a></p>
+                      </div>
+                      <!--Grid column-->
 
-                    <!--Grid column-->
-                    <div class="col-auto">
-                      <p>Roba da mettere nel footer</p>
-                    </div>
-                    <!--Grid column-->
-          
-                    
-                    <!--Grid column-->
+                  <!--Grid row-->
+                  <div class="row d-flex justify-content-center">
+                      <!--Grid column-->
+                      <div class="col-auto">
+                          <p>Per contatti: <a class="link" id="mail" target="_blank" href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=new">andreabucci123@gmail.com</a></p>
+                      </div>
                   </div>
                   <!--Grid row-->
+                  </div>
               </section>
               <!-- Section: Form -->
             </div>

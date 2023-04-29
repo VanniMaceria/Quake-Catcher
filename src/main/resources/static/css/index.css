@@ -1,3 +1,14 @@
+@font-face{
+    font-family: 'myhota';
+    src: url(/font/myhota-bold.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+*{
+   font-family: "Segoe UI", Arial, sans-serif;
+}
+
 #map{
    width: 50%;
    height: 93vh;
@@ -17,36 +28,46 @@
    background-color: white;
 }
 
-#spanQuake{
-   color: rgb(237, 185, 29);
-   font-weight: bold;
+#card1{
+    margin-top: 70px;
 }
 
-.bg-dark text-center text-white{
-   float: right;
-   width: 50%;
-   position: fixed;
-   bottom: 0;
+.pulsante{
+    background-color: rgb(237, 185, 29);
+    border: none;
+    padding: 7px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    border-radius: 3px;
+    width: 100px;
+    float: right;
+    margin-top: 10px;
 }
 
-#offcanvasDarkNavbarLabel{
-   color: rgb(237, 185, 29);
+.pulsante:hover{
+    background-color: #7c9fe6;
+    transition: ease-in-out 0.2s;
 }
 
-.nav-link:hover{
-   color: rgb(237, 185, 29);
-   transition: ease-in-out 0.2s;
+.card{
+    width: 85%;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
-.dropdown-item{
-   word-wrap: break-word;
-   white-space: pre-wrap;
-   word-break: break-word;
+.link{
+    text-decoration: none;
+    color: white;
 }
 
-.dropdown-item:hover{
-   background-color: unset;
-   color: unset;
+.link:hover{
+    color: rgb(237, 185, 29);
+}
+
+#mail:hover{
+    color: #0076CE;
 }
 
 select{
@@ -75,5 +96,9 @@ select{
    #div2{
       margin-top: auto;
    }
+
+    #card1{
+      margin-top: 20px;
+    }
 
  }
