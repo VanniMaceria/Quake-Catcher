@@ -52,23 +52,7 @@ L.geoJSON(jsonTerremoti, {
 }).addTo(map);
 //
 
-function filtraPerMagnitudo(){
-    var magnitudo = document.getElementById('selectMagnitudo').value;
-    magnitudo = parseFloat(magnitudo);
-    console.log("Scelto il magnitudo " + magnitudo);
-    
-    var filtrati = L.geoJson(jsonTerremoti, {
-        filter: function(feature) {
-            var magn = parseFloat(feature.properties.Magnitude);
-            return magn > magnitudo;
-        }
-    });
-
-    filtrati.eachLayer(function(layer) {    //mi serve a vedere se il filtraggio ha funzionato
-        console.log(layer.feature.properties);
-    });
-
-     
+function aggiornaLayer(filtrati){
     map.eachLayer(function(layer) {
         if(layer.getAttribution() != '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>') {
             map.removeLayer(layer);
@@ -78,28 +62,63 @@ function filtraPerMagnitudo(){
     map.addLayer(filtrati);  // Aggiungi il layer filtrato
     map.removeLayer(jsonTerremoti);  // Rimuovi il layer originale
     map.invalidateSize();
+}
 
-    //creo i popup per gli elementi filtrati
+function creaPopup(filtrati){
     filtrati.eachLayer(function(layer) {
         layer.on('click', function(e) {
           var feature = e.target.feature;
           var popupContent = "<b>Posizione:</b> " + feature.geometry.coordinates[1] + ", " + feature.geometry.coordinates[0] + "<br>" +
                              "<b>Magnitudo:</b> " + feature.properties.Magnitude + "<br>" +
                              "<b>Data:</b> " + feature.properties.DateTime + "<br>" +
-                             "<b>Profondità:</b> " + feature.properties.Depth + "<br>";
+                             "<b>Profondità:</b> " + feature.properties.Depth + " km <br>";
           layer.bindPopup(popupContent).openPopup();
         });
-    }); 
-    //
+    });
+}
+
+function filtraPerMagnitudo(){
+    var magnitudo = document.getElementById('selectMagnitudo').value;
+    magnitudo = parseFloat(magnitudo);
+    console.log("Scelto il magnitudo " + magnitudo);
+    
+    var filtrati = L.geoJson(jsonTerremoti, {
+        filter: function(feature) {
+            var magn = parseFloat(feature.properties.Magnitude);
+            return magn >= magnitudo;
+        }
+    });
+
+    filtrati.eachLayer(function(layer) {    //mi serve a vedere se il filtraggio ha funzionato
+        console.log(layer.feature.properties);
+    });
+
+     aggiornaLayer(filtrati);
+     creaPopup(filtrati)
 }
 
 function filtraPerAnno(){
-    alert("Ciao funziono");
+    var anno = document.getElementById('textInput').value;
+    console.log("Scelto l'anno " + anno);
+
+    var filtrati = L.geoJson(jsonTerremoti, {
+        filter: function(feature){
+        var str = feature.properties.DateTime;
+            return str.includes(anno);
+        }
+    });
+
+    filtrati.eachLayer(function(layer) {    //mi serve a vedere se il filtraggio ha funzionato
+        console.log(layer.feature.properties);
+    });
+
+     aggiornaLayer(filtrati);
+     creaPopup(filtrati)
 }
 
 function vediRaster(){
     console.log("Raster caricato");
-    var imageUrl = "geofile/prova.png";
+    var imageUrl = "geofile/raster/prova.png";
     var imageBounds = [[181.1110000000000184,85.9479999999999933], [-180.9890000000000043,-67.5520000000000067]];
     L.imageOverlay(imageUrl, imageBounds).addTo(map);
 }

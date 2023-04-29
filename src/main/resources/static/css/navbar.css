@@ -1,0 +1,44 @@
+*{
+   font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover{
+    color: rgb(237, 185, 29);
+}
+
+#spanQuake{
+   color: rgb(237, 185, 29);
+   font-weight: bold;
+}
+
+.bg-dark text-center text-white{
+   float: right;
+   width: 50%;
+   position: fixed;
+   bottom: 0;
+}
+
+#offcanvasDarkNavbarLabel{
+   color: rgb(237, 185, 29);
+}
+
+.nav-link:hover{
+   color: rgb(237, 185, 29);
+   transition: ease-in-out 0.2s;
+}
+
+.dropdown-item{
+   word-wrap: break-word;
+   white-space: pre-wrap;
+   word-break: break-word;
+}
+
+.dropdown-item:hover{
+   background-color: unset;
+   color: unset;
+}
