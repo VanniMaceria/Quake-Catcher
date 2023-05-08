@@ -16,6 +16,16 @@
    position: fixed;
 }
 
+.card-header{
+   background-color: #212529;
+   color: white;
+}
+
+.spanOperazione{
+   color:rgb(237, 185, 29);
+   font-weight: bold;
+}
+
 #container{
    float: right;
    width: 50%;
@@ -24,7 +34,7 @@
 #div2{
    margin-top: 56px;
    width: auto;
-   height: 100vh;
+   height: auto;
    background-color: white;
 }
 
@@ -41,7 +51,7 @@
     display: block;
     font-size: 16px;
     border-radius: 3px;
-    width: 100px;
+    width: 120px;
     float: right;
     margin-top: 10px;
 }
@@ -51,10 +61,21 @@
     transition: ease-in-out 0.2s;
 }
 
+.button-container {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+ }
+ 
+ .button-container button {
+   margin-top: 10px;
+ }
+
 .card{
     width: 85%;
     margin-bottom: 20px;
     margin-left: 20px;
+    box-shadow: 0 0 5px #ccc;
 }
 
 .link{

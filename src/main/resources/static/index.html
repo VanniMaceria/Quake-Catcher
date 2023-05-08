@@ -61,7 +61,7 @@
 
             <div class="card" id="card1">
                 <div class="card-header">
-                    Operazione #1
+                    Operazione <span class="spanOperazione">#1</span>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Ricerca per magnitudo</h5>
@@ -79,14 +79,17 @@
                             <option value="8">8</option>
                             <option value="9">9</option>
                         </select>
-                        <button class="pulsante" type="button" onclick="filtraPerMagnitudo()">Esegui</button>
+                        <div class="button-container">
+                          <button class="pulsante" type="button" onclick="filtraPerMagnitudo()">Esegui</button>
+                          <button class="pulsante" type="button" onclick="vediHeatmapPerMagnitudo()">Heatmap</button>
+                      </div>
                     </form>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    Operazione #2
+                    Operazione <span class="spanOperazione">#2</span>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Ricerca per anno</h5>
@@ -95,7 +98,10 @@
                         <label for="rangeInput">Seleziona anno:</label>
                         <input type="range" id="rangeInput" name="rangeInput" min="1990" max="2014" step="1" onchange="updateTextInput(this.value);">
                         <input type="text" id="textInput" name="textInput">
-                        <button class="pulsante" type="button" onclick="filtraPerAnno()">Esegui</button>
+                        <div class="button-container">
+                          <button class="pulsante" type="button" onclick="filtraPerAnno()">Esegui</button>
+                          <button class="pulsante" type="button" onclick="vediHeatmapPerAnno()">Heatmap</button>
+                      </div>
                     </form>
                 </div>
             </div>
@@ -103,13 +109,13 @@
 
             <div class="card">
                 <div class="card-header">
-                    Operazione #3
+                    Operazione <span class="spanOperazione">#3</span>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Vedi la mappa di concentrazione</h5>
-                    <p class="card-text">Carica il file raster della concentrazione di tutti i terremoti avvenuti tra il 1990 e il 2014.</p>
+                    <p class="card-text">Calcola una mappa di concentrazione di tutti i terremoti avvenuti tra il 1990 e il 2014.</p>
                     <!-- Metti una leggenda dei colori qui-->
-                    <button class="pulsante" type="button" onclick="vediRaster()">Esegui</button>
+                    <button class="pulsante" type="button" onclick="vediHeatmap()">Esegui</button>
                 </div>
             </div>
 
@@ -156,12 +162,14 @@
 
     <script>
       function updateTextInput(val) {
-        document.getElementById('textInput').value=val;
+        document.getElementById('textInput').value = val;
       }
     </script>
 
     <script src="/js/terremoti.js"></script>
+    <script src="/js/leaflet-heat.js"></script>
     <script src="/js/index.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
