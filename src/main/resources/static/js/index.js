@@ -147,6 +147,13 @@ function filtraPerAnno(){
     var anno = document.getElementById('textInput').value;
     console.log("Scelto l'anno " + anno);
 
+    var annoInt = parseInt(anno);
+    if(annoInt < 1990 || annoInt > 2014 || isNaN(annoInt)){ //controllo se l'anno è ammesso
+        console.log("Ma che è ooooooo");
+        alert("L'anno selezionato non è presente nel dataset\nInserire un valore compreso tra 1990 e 2014");
+        return undefined;
+    }
+
     var filtrati = L.geoJson(jsonTerremoti, {
         pointToLayer: creaPuntino,
         filter: function(feature){
@@ -205,8 +212,7 @@ function vediHeatmap(){
                                                radius: 25,
                                                minOpacity: 0.5}).addTo(map);
     
-    aggiornaLayer(heatmap);
-    
+    aggiornaLayer(heatmap);  
 }
 
 
