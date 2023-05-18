@@ -102,14 +102,14 @@ function creaPopup(filtrati){
 
 function filtraPerMagnitudo(){
     var magnitudo = document.getElementById('selectMagnitudo').value;
-    magnitudo = parseFloat(magnitudo);
+    magnitudo = Math.floor(magnitudo);
     console.log("Scelto il magnitudo " + magnitudo);
     
     var filtrati = L.geoJson(jsonTerremoti, {
         pointToLayer: creaPuntino,
         filter: function(feature) {
-            var magn = parseFloat(feature.properties.Magnitude);
-            return magn >= magnitudo;
+            var magn = Math.floor(feature.properties.Magnitude);
+            return magn == magnitudo;
         }
     });
 
