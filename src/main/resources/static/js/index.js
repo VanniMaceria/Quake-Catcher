@@ -2,13 +2,13 @@ var map = L.map('map').setView([41.33, 14.33], 7); //inizializzo la mappa su Ali
 
 L.control.scale().addTo(map);   //scala della mappa
 
-//creo la mappa di OpenStreetMap
+//inizializzo il layer di OpenStreetMap
 const openStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { 
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-//creo la mappa da satellite di Google 
+//inizializzo il layer da satellite di Google 
 const satellite = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}', {
 	attribution: '&copy; <a href="https://www.google.com/intl/it_it/help/terms_maps/">Google</a>'
 });
@@ -214,6 +214,3 @@ function vediHeatmap(){
     
     aggiornaLayer(heatmap);  
 }
-
-
-
