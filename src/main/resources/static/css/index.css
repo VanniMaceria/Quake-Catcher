@@ -54,6 +54,9 @@
     width: 120px;
     float: right;
     margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    box-shadow: 0 0 5px #ccc;
 }
 
 .pulsante:hover{
@@ -95,6 +98,35 @@ select{
    width: 70px;
    height: 35px;
    margin-top: 10px;
+}
+
+.legenda{
+   display: inline-block;
+   width: 50px;
+}
+
+#gradienteBlu{
+   background: rgb(91,152,238);
+   background: linear-gradient(90deg, rgba(91,152,238,1) 35%, rgba(68,235,242,1) 100%);
+   display: inline;
+   padding: 0px 100px 0px 100px;
+   margin-left: 20px;
+}
+
+#gradienteVerde{
+   background: rgb(130,244,57);
+   background: linear-gradient(90deg, rgba(130,244,57,1) 35%, rgba(239,238,42,1) 100%);
+   display: inline;
+   padding: 0px 100px 0px 100px;
+   margin-left: 20px;
+}
+
+#gradienteRosso{
+   background: rgb(243,185,31);
+   background: linear-gradient(90deg, rgba(243,185,31,1) 35%, rgba(254,60,9,1) 100%);
+   display: inline;
+   padding: 0px 100px 0px 100px;
+   margin-left: 20px;
 }
 
 /*reponsive*/

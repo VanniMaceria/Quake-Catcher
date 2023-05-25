@@ -65,15 +65,10 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Ricerca per magnitudo</h5>
-                    <p class="card-text">Esegue la ricerca dei terremoti con magnitudo uguale a quello selezionato</p>
+                    <p class="card-text">Esegue la ricerca dei terremoti con magnitudo pari a quello selezionato</p>
                     <form>
                         <label>Seleziona magnitudo:</label>
                         <select id="selectMagnitudo">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
                             <option value="6">6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
@@ -115,10 +110,17 @@
                     <h5 class="card-title">Vedi la mappa di concentrazione</h5>
                     <p class="card-text">Calcola una mappa di concentrazione di tutti i terremoti avvenuti tra il 1990 e il 2014.</p>
                     <!-- Metti una leggenda dei colori qui-->
+                    <div><span class="legenda">Bassa</span>
+                        <div id="gradienteBlu"></div>
+                    </div>
+                    <div><span class="legenda">Medio</span>
+                        <div id="gradienteVerde"></div>
+                    </div>
+                    <div><span class="legenda">Alta</span>
+                      <div id="gradienteRosso"></div>
+                    </div>
                     <button class="pulsante" type="button" onclick="vediHeatmap()">Esegui</button>
                 </div>
-            </div>
-
         </div>  <!--div2 -->
 
 
@@ -149,13 +151,6 @@
               <!-- Section: Form -->
             </div>
             <!-- Grid container -->
-          
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-              © 2023 Copyright:
-              <a class="text-white" href="#">ProgettoGeoinformatica</a> <!-- metti il link di GitHub-->
-            </div>
-            <!-- Copyright -->
           </footer>
     </div>  <!-- container-->
     
