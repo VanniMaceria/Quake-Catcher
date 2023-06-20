@@ -91,7 +91,7 @@
                     <p class="card-text">Esegue una ricerca sui terremoti avvenuti nell'anno selezionato</p>
                     <form>
                         <label for="rangeInput">Seleziona anno:</label>
-                        <input type="range" id="rangeInput" name="rangeInput" min="1990" max="2014" step="1" onchange="updateTextInput(this.value);">
+                        <input type="range" id="rangeInput" name="rangeInput" min="1990" max="2014" step="1" oninput="updateTextInput(this.value);">
                         <input type="text" id="textInput" name="textInput">
                         <div class="button-container">
                           <button class="pulsante" type="button" onclick="filtraPerAnno()">Esegui</button>
