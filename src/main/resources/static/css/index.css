@@ -60,7 +60,8 @@
 }
 
 .pulsante:hover{
-    background-color: #7c9fe6;
+    background-color: rgb(24, 23, 23);
+    color: rgb(237, 185, 29);
     transition: ease-in-out 0.2s;
 }
 

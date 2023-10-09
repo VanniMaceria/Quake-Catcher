@@ -1,170 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/scrollbar.css"/>
-    <title>Quake Catcher</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <title>Quake Catcher</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><span id="spanQuake">Quake</span> Catcher</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menù</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="html/file.html">Dataset</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Informazioni
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li class="boxDropdown"><a class="dropdown-item" href="#">Questa applicazione web ha lo scopo di segnalare le attività sismiche avvenute tra il 1990 e il 2014</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li class="boxDropdown"><a class="dropdown-item" class="link" href="https://github.com/VanniMaceria/Quake-Catcher" target="_blank">Dai un'occhiata alla repository su Github</a></li>
-                  </ul>
-                </li>
-              </ul>
-          </div>
-          </div>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><span id="spanQuake">Quake</span> Catcher</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menù</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
         </div>
-      </nav>
-                
-    
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/file.html">Dataset</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Informazioni
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li class="boxDropdown"><a class="dropdown-item" href="#">Questa applicazione web ha lo scopo di segnalare le attività sismiche avvenute tra il 1990 e il 2014</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li class="boxDropdown"><a class="dropdown-item" class="link"
+                    href="https://github.com/VanniMaceria/Quake-Catcher" target="_blank">Dai un'occhiata alla repository su Github</a></li>
+              </ul>
+            </li>
+            <li class="nav-item" id="li-search-bar">
+              <input type="text" id="indirizzo" placeholder="Inserisci un indirizzo" />
+              <button onclick="cercaIndirizzo()" id="searchButton">Cerca</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <div id="map"></div> <!--mappa leaflet-->
 
-    <div id="container">    <!-- questo è il 'body' di destra -->
 
-        <div id="div2">
+  <div id="map"></div> <!--mappa leaflet-->
 
-            <div class="card" id="card1">
-                <div class="card-header">
-                    Operazione <span class="spanOperazione">#1</span>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Ricerca per magnitudo</h5>
-                    <p class="card-text">Esegue la ricerca dei terremoti con magnitudo pari a quello selezionato</p>
-                    <form>
-                        <label>Seleziona magnitudo:</label>
-                        <select id="selectMagnitudo">
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                        </select>
-                        <div class="button-container">
-                          <button class="pulsante" type="button" onclick="filtraPerMagnitudo()">Esegui</button>
-                          <button class="pulsante" type="button" onclick="vediHeatmapPerMagnitudo()">Heatmap</button>
-                      </div>
-                    </form>
-                </div>
+  <div id="container"> <!-- questo è il 'body' di destra -->
+
+    <div id="div2">
+
+      <div class="card" id="card1">
+        <div class="card-header">
+          Operazione <span class="spanOperazione">#1</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Ricerca per magnitudo</h5>
+          <p class="card-text">Esegue la ricerca dei terremoti con magnitudo pari a quello selezionato</p>
+          <form>
+            <label>Seleziona magnitudo:</label>
+            <select id="selectMagnitudo">
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            <div class="button-container">
+              <button class="pulsante" type="button" onclick="filtraPerMagnitudo()">Esegui</button>
+              <button class="pulsante" type="button" onclick="vediHeatmapPerMagnitudo()">Heatmap</button>
             </div>
+          </form>
+        </div>
+      </div>
 
-            <div class="card">
-                <div class="card-header">
-                    Operazione <span class="spanOperazione">#2</span>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Ricerca per anno</h5>
-                    <p class="card-text">Esegue una ricerca sui terremoti avvenuti nell'anno selezionato</p>
-                    <form>
-                        <label for="rangeInput">Seleziona anno:</label>
-                        <input type="range" id="rangeInput" name="rangeInput" min="1990" max="2014" step="1" oninput="updateTextInput(this.value);">
-                        <input type="text" id="textInput" name="textInput">
-                        <div class="button-container">
-                          <button class="pulsante" type="button" onclick="filtraPerAnno()">Esegui</button>
-                          <button class="pulsante" type="button" onclick="vediHeatmapPerAnno()">Heatmap</button>
-                      </div>
-                    </form>
-                </div>
+      <div class="card">
+        <div class="card-header">
+          Operazione <span class="spanOperazione">#2</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Ricerca per anno</h5>
+          <p class="card-text">Esegue una ricerca sui terremoti avvenuti nell'anno selezionato</p>
+          <form>
+            <label for="rangeInput">Seleziona anno:</label>
+            <input type="range" id="rangeInput" name="rangeInput" min="1990" max="2014" step="1"
+              oninput="updateTextInput(this.value);">
+            <input type="text" id="textInput" name="textInput">
+            <div class="button-container">
+              <button class="pulsante" type="button" onclick="filtraPerAnno()">Esegui</button>
+              <button class="pulsante" type="button" onclick="vediHeatmapPerAnno()">Heatmap</button>
             </div>
+          </form>
+        </div>
+      </div>
 
 
-            <div class="card">
-                <div class="card-header">
-                    Operazione <span class="spanOperazione">#3</span>
+      <div class="card">
+        <div class="card-header">
+          Operazione <span class="spanOperazione">#3</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Vedi la mappa di concentrazione</h5>
+          <p class="card-text">Calcola una mappa di concentrazione di tutti i terremoti avvenuti tra il 1990 e il 2014.
+          </p>
+          <!-- Metti una leggenda dei colori qui-->
+          <div><span class="legenda">Bassa</span>
+            <div id="gradienteBlu"></div>
+          </div>
+          <div><span class="legenda">Medio</span>
+            <div id="gradienteVerde"></div>
+          </div>
+          <div><span class="legenda">Alta</span>
+            <div id="gradienteRosso"></div>
+          </div>
+          <button class="pulsante" type="button" onclick="vediHeatmap()">Esegui</button>
+        </div>
+      </div> <!--div2 -->
+
+
+
+      <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Form -->
+          <section class="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p>Tecnologie usate per lo sviluppo<br>- HTML<br>- CSS<br>- Javascript<br> - <a class="link"
+                    href="https://leafletjs.com/" target="_blank">Leaflet</a></p>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid row-->
+              <div class="row d-flex justify-content-center">
+                <!--Grid column-->
+                <div class="col-auto">
+                  <p>Per contatti: <a class="link" id="mail" target="_blank"
+                      href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=new">andreabucci123@gmail.com</a></p>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Vedi la mappa di concentrazione</h5>
-                    <p class="card-text">Calcola una mappa di concentrazione di tutti i terremoti avvenuti tra il 1990 e il 2014.</p>
-                    <!-- Metti una leggenda dei colori qui-->
-                    <div><span class="legenda">Bassa</span>
-                        <div id="gradienteBlu"></div>
-                    </div>
-                    <div><span class="legenda">Medio</span>
-                        <div id="gradienteVerde"></div>
-                    </div>
-                    <div><span class="legenda">Alta</span>
-                      <div id="gradienteRosso"></div>
-                    </div>
-                    <button class="pulsante" type="button" onclick="vediHeatmap()">Esegui</button>
-                </div>
-        </div>  <!--div2 -->
-
-
-
-        <footer class="bg-dark text-center text-white">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-              <!-- Section: Form -->
-              <section class="">
-                  <!--Grid row-->
-                  <div class="row d-flex justify-content-center">
-                      <!--Grid column-->
-                      <div class="col-auto">
-                          <p>Tecnologie usate per lo sviluppo<br>- HTML<br>- CSS<br>- Javascript<br> - <a class="link" href="https://leafletjs.com/" target="_blank">Leaflet</a></p>
-                      </div>
-                      <!--Grid column-->
-
-                  <!--Grid row-->
-                  <div class="row d-flex justify-content-center">
-                      <!--Grid column-->
-                      <div class="col-auto">
-                          <p>Per contatti: <a class="link" id="mail" target="_blank" href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=new">andreabucci123@gmail.com</a></p>
-                      </div>
-                  </div>
-                  <!--Grid row-->
-                  </div>
-              </section>
-              <!-- Section: Form -->
+              </div>
+              <!--Grid row-->
             </div>
-            <!-- Grid container -->
-          </footer>
-    </div>  <!-- container-->
-    
+          </section>
+          <!-- Section: Form -->
+        </div>
+        <!-- Grid container -->
+      </footer>
+    </div> <!-- container-->
+
 
     <script>
       function updateTextInput(val) {
         document.getElementById('textInput').value = val;
       }
+
+      //aggiungo un event listener per l'evento "keypress"
+      document.getElementById('indirizzo').addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+          cercaIndirizzo();
+        }
+      });
     </script>
 
     <script src="js/terremoti.js"></script>
     <script src="js/leaflet-heat.js"></script>
     <script src="js/index.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
 </body>
+
 </html>
