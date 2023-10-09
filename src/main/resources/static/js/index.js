@@ -214,3 +214,26 @@ function vediHeatmap(){
     
     aggiornaLayer(heatmap);  
 }
+
+function cercaIndirizzo() {
+    console.log("Cerco...");
+    var indirizzo = document.getElementById('indirizzo').value;
+    var url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(indirizzo);
+    console.log("Richiesta all'url: " + url);
+
+    fetch(url)  //effettuo una richiesta http -> get all'url qui sopra
+        .then(response => response.json())  //quando la risposta è pronta con then() prendo il contenuto
+        .then(data => {
+            if (data.length > 0) {
+                //accedo alle  proprietà lat e long presenti come attributi del json di risposta
+                var lat = parseFloat(data[0].lat);
+                var lon = parseFloat(data[0].lon);
+                console.log(data[0].addresstype);   //proprietà che specifica il tipo di posto (città, paese, nazione...)
+                map.setView([lat, lon], 12); //centro la mappa sulle coordinate ottenute
+            } else {
+                console.error('Nessuna corrispondenza trovata per l\'indirizzo');
+                alert("Indirizzo non esistente\nControlla se sono presenti eventuali errori di battitura");
+            }
+        })
+        .catch(error => console.error('Errore nella richiesta di geocodifica:', error));
+}

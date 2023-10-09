@@ -7,6 +7,14 @@
     color: white;
 }
 
+.nav-item{
+   margin-bottom: 5px;
+}
+
+#li-search-bar{
+   margin-top: 10px;
+}
+
 .link:hover{
     color: rgb(237, 185, 29);
 }
@@ -41,4 +49,18 @@
 .dropdown-item:hover{
    background-color: unset;
    color: unset;
+}
+
+#indirizzo{
+   border-radius: 3px;
+}
+
+#searchButton{
+   background-color: rgb(237, 185, 29);
+   border-radius: 3px;
+}
+
+#searchButton:hover{
+   background-color: rgb(24, 23, 23);
+   color: rgb(237, 185, 29);
 }
